@@ -22,6 +22,8 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Set Up Environment
+      run: sudo apt-get update && sudo apt-get install -y git
     - name: Create Frontend Image Tags
       env:
         SOURCE_LOCATION: src/azure-vote-front 
