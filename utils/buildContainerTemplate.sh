@@ -25,7 +25,8 @@ set -euxo pipefail  # fail on error
 # in alphabetical order, then another checksum of their names and checksums.
 # Running this command on windows-based infrastructure may return a different result due to CRLF
 pushd $GITHUB_WORKSPACE/$SRC_FOLDER/$SOURCE_LOCATION
-imageTag=$(git log -n 1 --format="%H" -- ".")
+#imageTag=$(git log -n 1 --format="%H" -- ".")
+imageTag=$(date +"%Y%m%d.%H.%M.%S")
 popd
   
 # If the image with the generated tag doesn't already exist, build it.
