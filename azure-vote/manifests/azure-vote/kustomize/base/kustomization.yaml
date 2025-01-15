@@ -9,4 +9,9 @@ images:
   - name: $AZURE_VOTE_IMAGE_REPO/azure-vote-back
     newTag: $BACKEND_IMAGE
 resources:
-  - manifests.yaml
+  - ../../helm/template/az-vote-back-deployment.yaml
+  - ../../helm/template/az-vote-svc.yaml
+  - ../../helm/template/az-vote-front-deployment.yaml
+  - ../../helm/template/az-vote-front-ingress.yaml
+  - ../../helm/template/az-vote-loadbalancer-svc.yaml
+  #- manifests.yaml
